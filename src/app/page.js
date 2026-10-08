@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import ProductItem from "../components/ProductItem";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -16,9 +17,7 @@ export default function Home() {
       <h1>Products</h1>
       <ul>
         {products.map((product) => (
-          <li key={product.id}>
-            {product.title} - ${product.price}
-          </li>
+          <ProductItem key={product.id} product={product} />
         ))}
       </ul>
     </main>

@@ -9,6 +9,7 @@ export default function Home() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    // გამოვიყენე dummyjson რადგან fakestoreapi არ მუშაობდა
     fetch("https://dummyjson.com/products")
       .then((res) => {
         if (!res.ok) {
@@ -21,6 +22,7 @@ export default function Home() {
       .finally(() => setLoading(false));
   }, []);
 
+  // Loading და Error შეტყობინება
   if (loading) {
     return <p>Loading...</p>;
   }
